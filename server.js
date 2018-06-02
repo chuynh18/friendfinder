@@ -10,19 +10,23 @@ var bodyParser = require("body-parser");
 
 // set up Express.js
 var app = express();
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 8080; // so that I can deploy this to Heroku
 
-// set up the Express.js to handle data parsing
+// set up Express.js to handle data parsing
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // =============================== ROUTES ===============================
 
-// bringing my routes in...
+// bringing my externally-defined routes in...
 var apiRoutes = require("./app/routing/apiRoutes");
 var htmlRoutes = require("./app/routing/htmlRoutes");
 
-// app.use("/apiRoutes", apiRoutes);
+// api calls will be at [URL-to-this-site]/api.
+app.use("/api", apiRoutes);
+
+// this makes it so that when the user hits up the root URL (aka "[URL-to-this-site]/"),
+// our server serves up the routes defined in htmlRoutes.js
 app.use("/", htmlRoutes);
 
 // ========================== EXPRESS.js LISTEN =========================
