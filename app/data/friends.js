@@ -1,3 +1,5 @@
+"use strict";
+
 var friends = [
     {
         name: "Obi-Wan Kenobi",
