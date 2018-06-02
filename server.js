@@ -10,7 +10,7 @@ var bodyParser = require("body-parser");
 
 // set up Express.js
 var app = express();
-var PORT = process.env.PORT || 8080; // so that I can deploy this to Heroku
+var PORT = process.env.PORT || 8080; // so that I can deploy to Heroku or test locally on port 8080
 
 // set up Express.js to handle data parsing
 app.use(bodyParser.urlencoded({ extended: true }));

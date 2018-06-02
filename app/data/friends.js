@@ -1,6 +1,6 @@
 "use strict";
 
-var friends = [
+exports.friends = [
     {
         name: "Obi-Wan Kenobi",
         photo: "placeholder",
