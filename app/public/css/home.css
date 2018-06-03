@@ -3,3 +3,12 @@ html {
     background-color: #111;
     color: #eee;
 }
+
+a {
+    color: #ddd;
+}
+
+body {
+    margin: auto;
+    width: 40%;
+}
