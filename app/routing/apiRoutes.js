@@ -17,11 +17,12 @@ apiRoutes.get("/friends", (req, res) => {
 // will cause the server to receive and process the survey results, then respond
 // with the "most compatible" friend
 apiRoutes.post("/friends", (req, res) => {
-    console.log(req.body);
     // ========= LOGIC TO RECEIVE/PARSE CLIENT REQUEST =========
     var surveyResult = []; // will contain the parseInt-ed survey results coming from the user
     var rejected = false;
     Object.keys(req.body).forEach(element => {
+        // ========= LOGIC TO RECEIVE/PARSE CLIENT REQUEST =========
+        // --------- BEGIN SERVER-SIDE VALIDATION --------- guard against naughty people.
         var tempAnswer = parseInt(req.body[element]);
         if (tempAnswer < 1) { // reject numbers smaller than 1
             surveyResult.push(-1);
@@ -58,9 +59,9 @@ apiRoutes.post("/friends", (req, res) => {
         }
     }
     else if (surveyResult.indexOf(-1) > -1) { // reject requests that contain invalid values (see forEach loop above)
-        res.send("Error:  request contains invalid value.");
+        res.send("Error:  request contains invalid value(s).");
     }
-
+    // --------- END OF SERVER-SIDE VALIDATION ---------
     if (rejected) {
         console.log("\nInvalid request received.  Rejecting request...");
     }
@@ -77,9 +78,9 @@ apiRoutes.post("/friends", (req, res) => {
             // iterate through and compare every single score
             for (var j = 0; j < friendsCopy[i].scores.length; j++) {
                 var diff = surveyResult[j] - friendsCopy[i].scores[j];
-                // if diff is negative, multiply it by -1 and store that value (same result as absolute value)
+                // if diff is negative, invert it and store that value (same result as absolute value)
                 if (diff < 0) {
-                    diff = (-1) * diff;
+                    diff = -diff;
                 }
                 // increment totalDiff by the difference of the individual comparison
                 totalDiff += diff;
