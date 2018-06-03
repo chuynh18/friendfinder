@@ -17,6 +17,7 @@ apiRoutes.get("/friends", (req, res) => {
 // will cause the server to receive and process the survey results, then respond
 // with the "most compatible" friend
 apiRoutes.post("/friends", (req, res) => {
+    console.log(req.body);
     // ========= LOGIC TO RECEIVE/PARSE CLIENT REQUEST =========
     var surveyResult = []; // will contain the parseInt-ed survey results coming from the user
     var rejected = false;

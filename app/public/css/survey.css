@@ -10,7 +10,7 @@ a {
 
 body {
     margin: auto;
-    width: 50%;
+    width: 55%;
 }
 
 .question {
@@ -25,4 +25,8 @@ h1 {
 
 .instruction {
     font-size:20pt;
+}
+
+.warning {
+    color: red;
 }
