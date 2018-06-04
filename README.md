@@ -3,6 +3,8 @@ Friend Finder
 
 [Click here to view this assignment on Heroku](https://protected-ocean-51681.herokuapp.com/)
 
+__tl;dr a survey built on Node.js/Express.js without using any external client-side libraries like Bootstrap or JQuery__
+
 What's going on?
 ----------------
 Answer 10 questions and get paired up with the Star Wars character of your dreams!  Really!
@@ -16,6 +18,8 @@ The premise is simple:  Answer 10 very sarcastic questions, and I'll tell you wh
 Tell me more about the code.
 ----------------------------
 Sure.  First off, while I wouldn't call everything I'm doing optimal, I wanted to make this fairly slim.  We've worked heavily with external libraries such as JQuery and Bootstrap, and while I have nothing against them, I wanted to try to minimize the use of such libraries.  Therefore, this assignment was built without using any external libraries for the client side.  No Bootstrap, no JQuery, no externally linked JavaScript or CSS files.
+
+Sure, it's a bit plain, but excluding the npm packages, this project amounts to less than 120 KB (including the images).  In fact, the images amount to 94 KB.  `jquery-3.3.1.min.js` is almost 85 KB, `bootstrap.min.css` (as of version 4.1.1) is 137 KB, and `popper.min.js` (as of version 1.14.3) is almost 20 KB.  So had I used these libraries, I would have bloated up my project considerably, given that the download size for those libraries is greater than the download size for the rest of my project __including the images__.
 
 There are two main reasons I chose to go this route.
 

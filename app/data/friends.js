@@ -13,7 +13,7 @@ exports.friends = [
     },
     {
         name: "Darth Plagueis",
-        photo: "/images/plagueis.png",
+        photo: "/images/plagueis.jpg",
         scores: [4,3,2,1,3,1,5,3,4,1]
     },
     {
@@ -28,7 +28,7 @@ exports.friends = [
     },
     {
         name: "The Emperor",
-        photo: "/images/sidious.png",
+        photo: "/images/sidious.jpg",
         scores: [5,5,1,1,3,2,4,3,3,5]
     }
 ]
