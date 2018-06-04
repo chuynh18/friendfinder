@@ -82,8 +82,9 @@ var onSubmit = function() {
         // send data to server
         var xhr = new XMLHttpRequest(); 
 
-        xhr.onreadystatechange = function() {
+        xhr.onload = function() {
             console.log(xhr.response);
+            // code here to draw modal with data coming from xhr.response
         }
 
         xhr.open("POST", "/api/friends", true);
