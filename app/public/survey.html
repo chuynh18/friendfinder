@@ -10,7 +10,7 @@
     <body>
         <h1>Answer these questions and face your destiny</h1>
         <p class="instruction">Rate your affinity to the following questions or statements, with 5 being the most affinity and 1 being the least.</p>
-        <form action="/api/friends" method="post">
+        <form id="charQuiz" action="javascript:void(0);">
             <div class="question" id="q1">1. How likely are you to backstab a mentor, teacher, or superior?<br>
                 <input type="radio" class="q1" id="q11" name="q1" value="1"><label for="q11">1 </label>
                 <input type="radio" class="q1" id="q12" name="q1" value="2"><label for="q12">2 </label>
@@ -83,7 +83,7 @@
             </div>
             <input type="submit" value="Submit" id="submitButton">
           </form> 
-          <div class="warning" id="warning"></div>
+          <div class="warning" id="warning"> <br></div>
           <script src="/js/survey.js"></script>
     </body>
 </html>
