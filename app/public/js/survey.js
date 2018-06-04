@@ -87,10 +87,13 @@ var onSubmit = function() {
 
             document.getElementById("charImage").innerHTML = `<img src="${response.photo}" alt="${response.name}">`;
             document.getElementById("charName").textContent = `${response.name}`;
-            if (response.difference > 10) {
+            if (response.difference < 5) {
+                document.getElementById("matchQuality").textContent = "WOW!  You are essentially a perfect match!";
+            }
+            else if (response.difference < 10) {
                 document.getElementById("matchQuality").textContent = "You are an excellent match!";
             }
-            else if (response.difference > 15) {
+            else if (response.difference < 15) {
                 document.getElementById("matchQuality").textContent = "You are a decent match!";
             }
             else {
