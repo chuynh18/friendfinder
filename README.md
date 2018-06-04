@@ -1,6 +1,8 @@
 Friend Finder
 =============
 
+[Click here to view this assignment on Heroku](https://protected-ocean-51681.herokuapp.com/)
+
 What's going on?
 ----------------
 Answer 10 questions and get paired up with the Star Wars character of your dreams!  Really!
