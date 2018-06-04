@@ -19,12 +19,12 @@ Tell me more about the code.
 ----------------------------
 Sure.  First off, while I wouldn't call everything I'm doing optimal, I wanted to make this fairly slim.  We've worked heavily with external libraries such as JQuery and Bootstrap, and while I have nothing against them, I wanted to try to minimize the use of such libraries.  Therefore, this assignment was built without using any external libraries for the client side.  No Bootstrap, no JQuery, no externally linked JavaScript or CSS files.
 
-Sure, it's a bit plain, but excluding the npm packages, this project amounts to less than 120 KB (including the images).  In fact, the images amount to 94 KB.  `jquery-3.3.1.min.js` is almost 85 KB, `bootstrap.min.css` (as of version 4.1.1) is 137 KB, and `popper.min.js` (as of version 1.14.3) is almost 20 KB.  So had I used these libraries, I would have bloated up my project considerably, given that the download size for those libraries is greater than the download size for the rest of my project __including the images__.
+Sure, it's a bit plain, but excluding the npm packages, this project amounts to less than 120 KB (including the images).  In fact, the images amount to 94 KB.  `jquery-3.3.1.min.js` is almost 85 KB, `bootstrap.min.css` (as of version 4.1.1) is 137 KB, and `popper.min.js` (as of version 1.14.3) is almost 20 KB.  So had I used these libraries, I would have bloated up my project considerably, given that the download size for those libraries is greater than the download size for the rest of my project including the images.
 
-There are two main reasons I chose to go this route.
+So to recap, the two main reasons I chose not to use JQuery and Bootstrap are...
 
 1. Learning.  I don't want to be handicapped into relying on external libraries.
-1. I don't think JQuery and Bootstrap are great fits for the nature of this page.  Given that I'm building something that just amounts to an HTML form, I figured that the overhead of Bootstrap and JQuery would be kind of egregious (on a relative scale, anyway.)
+1. I don't think JQuery and Bootstrap are great fits for the nature of this page.  Given that I'm building something that just amounts to an HTML form, I figured that the overhead of Bootstrap and JQuery would be kind of egregious (on a relative scale, anyway.)  __Do the math:  my project is less than 120 KB including images, JQuery + Bootstrap + popper are 241 KB.__
 
 So how'd you accomplish things if you didn't use those libraries?
 -----------------------------------------------------------------
