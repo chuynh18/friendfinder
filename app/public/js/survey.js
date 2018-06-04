@@ -1,6 +1,5 @@
 "use strict";
 
-var validForm = false;
 var buildUnanswered;
 var indexOfUnchecked;
 var spliceUnchecked;
@@ -74,7 +73,6 @@ var onSubmit = function() {
         submitClicked = true;
     }
     else {
-        validForm = true;
         document.getElementById("warning").textContent = "";
 
         formData = formData.slice(0,formData.length-1);
@@ -83,13 +81,47 @@ var onSubmit = function() {
         var xhr = new XMLHttpRequest(); 
 
         xhr.onload = function() {
-            console.log(xhr.response);
-            // code here to draw modal with data coming from xhr.response
+            var response = JSON.parse(xhr.response);
+            console.log(response);
+            console.log(typeof response);
+
+            document.getElementById("charImage").innerHTML = `<img src="${response.photo}" alt="${response.name}">`;
+            document.getElementById("charName").textContent = `${response.name}`;
+            if (response.difference > 10) {
+                document.getElementById("matchQuality").textContent = "You are an excellent match!";
+            }
+            else if (response.difference > 15) {
+                document.getElementById("matchQuality").textContent = "You are a decent match!";
+            }
+            else {
+                document.getElementById("matchQuality").textContent = "You are an acceptable match.";
+            }
+
+            // render the modal on response
+            modal.style.display = "block";
         }
 
         xhr.open("POST", "/api/friends", true);
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhr.send(formData);
+    }
+}
+
+// Get the modal
+var modal = document.getElementById('surveyModal');
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
     }
 }
 

@@ -20,7 +20,6 @@ apiRoutes.post("/friends", (req, res) => {
     // ========= LOGIC TO RECEIVE/PARSE CLIENT REQUEST =========
     var surveyResult = []; // will contain the parseInt-ed survey results coming from the user
     var rejected = false;
-    console.dir(req.body);
     // I'm aware my code won't care what the name of the keys are.
     // As long as there are 10 keys, and their values are numbers between 1 and 5 inclusive, it'll work.
     Object.keys(req.body).forEach(element => {

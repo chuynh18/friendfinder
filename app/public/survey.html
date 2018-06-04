@@ -2,14 +2,15 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>SURVEY</title>
+        <title>SARCASTIC STAR WARS SURVEY</title>
         <link rel="stylesheet" href="/css/survey.css" />
 		<link rel="icon" type="image/png" href="/images/favicon.png" />
         <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> -->
     </head>
     <body>
-        <h1>Answer these questions and face your destiny</h1>
-        <p class="instruction">Rate your affinity to the following questions or statements, with 5 being the most affinity and 1 being the least.</p>
+        <h1><span class="kindablue">Answer these questions</span> and <span class="kindared">face your destiny</span></h1>
+        <p class="instruction">Rate your affinity to the following questions or statements, with <span class="kindablue">5 being the most affinity</span> and <span class="kindared">1 being the least</span>.</p>
+        <!-- Survey form -->
         <form id="charQuiz" action="javascript:void(0);">
             <div class="question" id="q1">1. How likely are you to backstab a mentor, teacher, or superior?<br>
                 <input type="radio" class="q1" id="q11" name="q1" value="1"><label for="q11">1 </label>
@@ -39,7 +40,7 @@
                 <input type="radio" class="q4" id="q44" name="q4" value="4"><label for="q44">4 </label>
                 <input type="radio" class="q4" id="q45" name="q4" value="5"><label for="q45">5 </label>
             </div>
-            <div class="question" id="q5">5. Pick 5 if you love sand, 1 if you think it's coarse and rough and irritating and it gets everywhere (or something in between.)<br>
+            <div class="question" id="q5">5. Pick 5 if you love sand, 1 if you think it's coarse and rough and irritating and it gets everywhere.  Or maybe you feel something in between, if that's even possible.<br>
                 <input type="radio" class="q5" id="q51" name="q5" value="1"><label for="q51">1 </label>
                 <input type="radio" class="q5" id="q52" name="q5" value="2"><label for="q52">2 </label>
                 <input type="radio" class="q5" id="q53" name="q5" value="3"><label for="q53">3 </label>
@@ -67,7 +68,7 @@
                 <input type="radio" class="q8" id="q84" name="q8" value="4"><label for="q84">4 </label>
                 <input type="radio" class="q8" id="q85" name="q8" value="5"><label for="q85">5 </label>
             </div>
-            <div class="question" id="q9">9. How much do you agree with the statement:  blasters are uncivilized<br>
+            <div class="question" id="q9">9. How much do you agree with the statement:  blasters are uncivilized (5 is strongly agree, 1 is strongly disagree).<br>
                 <input type="radio" class="q9" id="q91" name="q9" value="1"><label for="q91">1 </label>
                 <input type="radio" class="q9" id="q92" name="q9" value="2"><label for="q92">2 </label>
                 <input type="radio" class="q9" id="q93" name="q9" value="3"><label for="q93">3 </label>
@@ -83,7 +84,19 @@
             </div>
             <input type="submit" value="Submit" id="submitButton">
           </form> 
+          <!-- text goes here if user misses a radio button then tries to submit -->
           <div class="warning" id="warning"> <br></div>
+          <!-- Begin modal -->
+          <div id="surveyModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p>Your Star Wars Spirit Animal (wait, what?) is...</p>
+              <div id="charImage"></div>
+              <p id="charName"></p>
+              <p id="matchQuality"></p>
+            </div>
+          </div>
+          <!-- client-side JavaScript -->
           <script src="/js/survey.js"></script>
     </body>
 </html>

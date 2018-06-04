@@ -28,7 +28,7 @@ exports.friends = [
     },
     {
         name: "The Emperor",
-        photo: "/images/grievous.jpg",
+        photo: "/images/sidious.png",
         scores: [5,5,1,1,3,2,4,3,3,5]
     }
 ]
