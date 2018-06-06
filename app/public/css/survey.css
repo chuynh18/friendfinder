@@ -78,4 +78,16 @@ h1 {
     color: black;
     text-decoration: none;
     cursor: pointer;
-} 
+}
+
+@media only screen and (max-width: 767px) {
+    body {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        width: 100%;
+    }
+}

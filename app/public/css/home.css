@@ -12,3 +12,15 @@ body {
     margin: auto;
     width: 40%;
 }
+
+@media only screen and (max-width: 767px) {
+    body {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        width: 100%;
+    }
+}
