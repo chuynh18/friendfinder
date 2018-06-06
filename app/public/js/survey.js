@@ -46,25 +46,25 @@ var onSubmit = function() {
     }
 
     for (var i = 1; i < 11; i++) { // the 11 is hardcoded because I know I wrote 10 questions
-        var elements = document.getElementsByClassName("q"+i);
+        var elements = document.getElementsByClassName(i);
         var checked = false;
         for (var j = 0; j < elements.length; j++) {
             if (elements[j].checked) {
                 checked = true;
-                formData += `q${i}=${j+1}&`
+                formData += `${i}=${j+1}&`
             }
         }
         // builds list of unanswered questions
         if (!checked) {
             unchecked.push(i);
             // make the unanswered question red
-            document.getElementById("q"+i).classList.add("warning");
+            document.getElementById(i).classList.add("warning");
         }
         else {
             // if it was red but now shouldn't be, make it not red
             // this is most useful if the user fixed some flagged questions but not all
-            if (document.getElementById("q"+i).classList.contains("warning")) {
-                document.getElementById("q"+i).classList.remove("warning");
+            if (document.getElementById(i).classList.contains("warning")) {
+                document.getElementById(i).classList.remove("warning");
             }
         }
     }
@@ -74,8 +74,7 @@ var onSubmit = function() {
     }
     else {
         document.getElementById("warning").textContent = "";
-
-        formData = formData.slice(0,formData.length-1);
+        
         console.log(formData);
         // send data to server
         var xhr = new XMLHttpRequest(); 
@@ -131,7 +130,7 @@ window.onclick = function(event) {
 // attach event listeners to radio buttons that will remove red as appropriate
 // user will only see this if they epic fail the first time around
 for (var i = 0; i < 11; i++) { // once again, the 11 is hardcoded because I know I wrote 10 questions
-    var radio = document.getElementsByClassName("q"+i);
+    var radio = document.getElementsByClassName(i);
     for (var j = 0; j < radio.length; j++) {
         // add event listeners to all the radio buttons
         radio[j].addEventListener("click", function(event) {
@@ -140,7 +139,7 @@ for (var i = 0; i < 11; i++) { // once again, the 11 is hardcoded because I know
             }
             
             // removes question from the list of red
-            var questionNumber = parseInt(this.classList[0].slice(1,this.classList[0].length));
+            var questionNumber = parseInt(this.classList[0]);
             if (submitClicked) {
                 var index = indexOfUnchecked(questionNumber);
                 if (index > -1) {
